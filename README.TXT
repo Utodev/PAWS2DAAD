@@ -6,7 +6,7 @@ TARGET
 
 PAWS2DAAD takes snapshot files (.SNA, .SP, .Z80) of  Spectrum  games written  with PAWS or Quill system (version A or C), and  produces source files for DAAD (Aventuras AD Adventure Writer).
 
-Please make sure you use the tool to convert/update your own games
+Please make sure you use the tool to convert/update your own games, or ask for permission to copyright holder(s).
 
 NOTES ON PAWS/QUILL TO DAAD CONVERSIONS
 ---------------------------------------
@@ -48,13 +48,15 @@ REMOV 100 verb
 5) Once this is done, game should be compilable and playable, but not everything from PAW/QUILL can be converted to DAAD, your source file wil lbe plenty of "PAWS2DAAD note". Most of them should work, but if something is not
 properly working.
 
-Important: please remember every game has a copyright holder, if you use this tool to port games you made it's ok, but otherwise please ask permission to the copyright holder.
-
 
 PLATFORM
 --------
     
-The code  has been  compiled  with Freepascal so it's easy to get it working for Windows, Linux and MacOS at least
+The code  has been  compiled  with Freepascal so it's easy to get it working for Windows, Linux and MacOS at least.
+
+To build the code just install freepascal and type:
+
+fpc paws2daad.pas
 
 INPUT
 -----
