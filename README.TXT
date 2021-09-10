@@ -8,6 +8,16 @@ PAWS2DAAD takes snapshot files (.SNA, .SP, .Z80) of  Spectrum  games written  wi
 
 Please make sure you use the tool to convert/update your own games, or ask for permission to copyright holder(s).
 
+DOWNLOAD
+--------
+
+Only the Windows version is compiled at the moment:
+
+http://www.ngpaws.com/downloads/DAAD/PCDAAD/
+
+You can though compile it using freepascal (install package fpc on Linux or find the free pascal compiler in the Lazarus page for Mac, then just "fpc paws2daad.pas")
+
+
 NOTES ON PAWS/QUILL TO DAAD CONVERSIONS
 ---------------------------------------
 
