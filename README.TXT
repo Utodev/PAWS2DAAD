@@ -13,7 +13,7 @@ DOWNLOAD
 
 Only the Windows version is compiled at the moment:
 
-http://www.ngpaws.com/downloads/DAAD/PCDAAD/
+http://www.ngpaws.com/downloads/DAAD/PAWS2DAAD/
 
 You can though compile it using freepascal (install package fpc on Linux or find the free pascal compiler in the Lazarus page for Mac, then just "fpc paws2daad.pas")
 
