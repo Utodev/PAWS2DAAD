@@ -4,21 +4,21 @@ PROGRAM PAWS2DAAD;
 uses
   SysUtils, Strings, strutils, Dos, Z80Load;
 
-(************************************************************************************)
-(*                                                                                  *)
-(*  PAWS2DAAD is fork of UNPAWS, a Professional Adventure Writing System extractor. *)
-(*  Also works for Quill games, although you will have to check vocabulary as Quill *)
-(*  does only support four letters per word, while PAWS/DAAD support five.          *)
-(*                                                                                  *)
-(*  Original version: Jose Luis Cebrian Pague                                       *)
-(*  Pascal version and DSF export: Carlos Sánchez                                   *)
-(*  128K and graphics support: Alexander Katz (sasha@kats.pp.kiev.ua)               *)
-(*                                                                                  *)
-(************************************************************************************)
+(**************************************************************************************)
+(*                                                                                    *)
+(*  PAWS2DAAD is a fork of UNPAWS, a Professional Adventure Writing System extractor. *)
+(*  Also works for Quill games, although you will have to check vocabulary as Quill   *)
+(*  does only support four letters per word, while PAWS/DAAD support five.            *)
+(*                                                                                    *)
+(*  Original version: Jose Luis Cebrian Pague                                         *)
+(*  Pascal version and DSF export: Carlos Sánchez                                     *)
+(*  128K and graphics support: Alexander Katz (sasha@kats.pp.kiev.ua)                 *)
+(*                                                                                    *)
+(**************************************************************************************)
 
 {$I-,S-,R-}
-CONST Version = '2.2';
-      Copyright='(c) 1995,2019 Jose Luis Cebrián, Alexander Katz, Carlos Sánchez';
+CONST Version = '2.3';
+      Copyright='(c) 1995,2021 Jose Luis Cebrián, Alexander Katz, Carlos Sánchez';
       Product = 'PAWS2DAAD';
       MAXTVOC=6;
       terminatorOpcodes: set of byte = [19, 21, 22, 23,103];  // DONE, DESC, OK, END and NOTDONE
@@ -1425,25 +1425,27 @@ BEGIN (* main *)
               END;
           end;
           S := '> '+ S;
-          //Write(FOut,S,Select(QuillVersion=0,' ','  ')) ;
+          //WriteLn(FOut,'[',S,']');
           proptr := proptr + 1 ;
           if QuillVersion<>0 then
           BEGIN
             S2:=Vocabula(Peek(proptr),-1);
-            if S2 = '' THEN S := IntToStr(Peek(proptr)) ;
+            if S2 = '' THEN S2 := IntToStr(Peek(proptr)) ;
+            WriteLn(FOut,'[',S,'] [',S2,']');
           END
           else
           begin
             S2 := Vocabula (Peek(proptr), 2) ;
-            if (Peek(proptr) = 1) then S2 := S2 + '_    '
+            if (Peek(proptr) = 1) then S2 := '_    '
             else
-            if (Peek(proptr) = 255) then S2 := S2 + '_    ';
+            if (Peek(proptr) = 255) then S2 := '_    ';
             if S2 = '' THEN
              BEGIN
                 if (Peek(proptr) < 20) then
                     S2 := Vocabula(Peek(proptr), 2);
                 if S2='' THEN S:=IntToStr(Peek(proptr)) ;
              END;
+             //WriteLn(FOut,'{',S,'} {',S2,'}');
           end;
           S := S + ' ' + S2;
           IF ((P=1) OR  (P=2)) AND (S<>'> _     _    ') THEN S := '; PAWS2DAAD note: it was: ' + S + #13#10 + '> _    _    ';
