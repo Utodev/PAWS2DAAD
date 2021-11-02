@@ -1,3 +1,6 @@
 *.exe
 *.o
 *.ppu
+*.dsf
+*.z80
+*.sna
