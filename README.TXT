@@ -30,10 +30,9 @@ PAWS2DAAD generates DAAD source in the DSF format used by DAAD Reborn Compiler, 
 implementation of the old compiler, with some newer features. DAAD Reborn Compiler (aka DRC) is
 also include in the "DAAD Ready" suite.
 
-On theother hand, PAWS2DAAD does not generate a DSF source file which can be used directly in DAAD, because
-DAAD start database file uses processes in a different way. You can find the start database files at
-DRC site (https://github.com/daad-adventure-writer/DRC). There is one for English and one for Spanish.
-You will notice that file already have 7 processes. You will have to manually merge the start
+On the other hand, PAWS2DAAD does not generate a DSF source file which can be used directly in DAAD, because
+DAAD start database file uses processes in a different way. You can find the start database files in the DAAD Ready
+suite, in the TOOLS/DRC folder. You will notice that file already have 7 processes. You will have to manually merge the start
 database and PAWS2DAAD output. 
 
 In order to do that you will have to accomodate the DAAD processes into 
