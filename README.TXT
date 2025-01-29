@@ -31,9 +31,9 @@ implementation of the old compiler, with some newer features. DAAD Reborn Compil
 also include in the "DAAD Ready" suite.
 
 On the other hand, PAWS2DAAD does not generate a DSF source file which can be used directly in DAAD, because
-DAAD start database file uses processes in a different way. You can find the start database files in the DAAD Ready
-suite, in the TOOLS/DRC folder. You will notice that file already have 7 processes. You will have to manually merge the start
-database and PAWS2DAAD output. 
+DAAD start database file uses processes in a different way. You will have to manually merge the start game template
+and PAWS2DAAD output.  You can find the start game template in the DAAD Ready suite (https://www.ngpaws.com/daadready/).
+ The template is at the TOOLS/DRC folder. You will notice that file already have 7 processes. 
 
 In order to do that you will have to accomodate the DAAD processes into 
 the exported content, so these are the steps:
